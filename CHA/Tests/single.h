@@ -1,0 +1,1 @@
+void single(double * state, char ch);

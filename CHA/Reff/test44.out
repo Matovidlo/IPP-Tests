@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<functions dir="">
+    <function file="Tests/nothing.c" name="do_not_analyze" varargs="no" rettype="extern stringList *">
+    </function>
+</functions>

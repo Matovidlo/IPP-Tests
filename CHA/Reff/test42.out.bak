@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<functions dir="./">
+    <function file="Tests/more.h" name="g" varargs="no" rettype="bool">
+        <param number="1" type="bool" />
+        <param number="2" type="char" />
+    </function>
+    <function file="Tests/more.h" name="f" varargs="no" rettype="void">
+        <param number="1" type="int" />
+    </function>
+    <function file="Tests/more.h" name="h" varargs="no" rettype="inline void">
+        <param number="1" type="int" />
+    </function>
+    <function file="Tests/more.h" name="f" varargs="no" rettype="double">
+        <param number="1" type="int" />
+        <param number="2" type="int" />
+    </function>
+    <function file="Tests/more.h" name="f" varargs="no" rettype="double">
+        <param number="1" type="int" />
+        <param number="2" type="int" />
+    </function>
+    <function file="Tests/single.h" name="single" varargs="no" rettype="void">
+        <param number="1" type="double *" />
+        <param number="2" type="char" />
+    </function>
+    <function file="Tests/subdir/subsubdir/trivial.h" name="isBraceFormat" varargs="no" rettype="int">
+    </function>
+    <function file="Tests/subdir/subsubdir/trivial.h" name="getDirectiveNestLevel" varargs="no" rettype="unsigned int">
+    </function>
+    <function file="Tests/subdir/subsubdir/trivial.h" name="cppInit" varargs="no" rettype="void">
+        <param number="1" type="const double *" />
+        <param number="2" type="char" />
+    </function>
+    <function file="Tests/subdir/subsubdir/trivial.h" name="cppUngetc" varargs="yes" rettype="void">
+        <param number="1" type="char *" />
+    </function>
+    <function file="Tests/subdir/whitespace.h" name="lineBreak" varargs="no" rettype="extern inline void">
+    </function>
+    <function file="Tests/subdir/whitespace.h" name="debugPrintf" varargs="yes" rettype="extern      inline void">
+        <param number="1" type="const int" />
+        <param number="2" type="const char          *  const" />
+    </function>
+    <function file="Tests/subdir/whitespace.h" name="debugPutc" varargs="no" rettype="extern void">
+        <param number="1" type="const int" />
+        <param number="2" type="const int" />
+    </function>
+    <function file="Tests/underscore.h" name="function_with_underscores" varargs="no" rettype="double">
+        <param number="1" type="char *" />
+        <param number="2" type="bool" />
+    </function>
+</functions>

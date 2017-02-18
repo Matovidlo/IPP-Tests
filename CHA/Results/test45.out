@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions dir="">
+    <function file="Tests/macro_comm.c" name="triple" varargs="yes" rettype="int">
+        <param number="1" type="int"/>
+    </function>
+    <function file="Tests/macro_comm.c" name="quattro" varargs="yes" rettype="int">
+        <param number="1" type="type"/>
+    </function>
+</functions>
