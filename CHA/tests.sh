@@ -195,8 +195,26 @@ $INTERPRETER $TASK.$EXTENSION --input=Tests/comments2.c --pretty-xml=4 > ./Resul
 echo -n $? > ./Results/test46.!!!
 
 # test47: Ignore function declarations in strings
-$INTERPRETER $TASK.$EXTENSION --input=./Tests/strings2.h.c > ./Results/test47.out 2> ./Results/test47.err
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/strings2.h.c > ./Results/test47.out > ./Results/test47.out 2> ./Results/test47.err
 echo -n $? > ./Results/test47.!!!
+
+# test48: Duplicated script parameters
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/strings2.h.c --input=Tests/comments2.c > ./Results/test48.out 2> ./Results/test48.err
+echo -n $? > ./Results/test48.!!!
+
+# test49: Multi line macros / comments
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/multi_line.h > ./Results/test49.out 2> ./Results/test49.err
+echo -n $? > ./Results/test49.!!!
+
+# test50: Function definition in function body
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/function_body.h > ./Results/test50.out 2> ./Results/test50.err
+echo -n $? > ./Results/test50.!!!
+
+# test51: No permissions to read file
+chmod 000 ./Tests/restricted.h
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/restricted.h > ./Results/test51.out 2> ./Results/test51.err
+echo -n $? > ./Results/test51.!!!
+chmod 664 ./Tests/restricted.h
 
 ################################################################################
 
@@ -206,7 +224,7 @@ FAIL="[ \033[0;31mFAIL\033[0;0m ]"
 
 printf "File\t Output\t Return\n"
 
-for i in 0{1..9} {10..47}
+for i in 0{1..9} {10..51}
 do
     printf "Test${i}\t"
     if [ $i == "01" ] || [ $i == "04" ];
