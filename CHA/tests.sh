@@ -224,6 +224,10 @@ chmod 664 ./Tests/restricted.h
 $INTERPRETER $TASK.$EXTENSION --input=./Tests > ./Results/test53.out --output=out/ 2> ./Results/test53.err
 echo -n $? > ./Results/test53.!!!
 
+# test54: Struct / enum / custom type in headers
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/struct_enum_params.h > ./Results/test54.out 2> ./Results/test54.err
+echo -n $? > ./Results/test54.!!!
+
 ################################################################################
 
 
@@ -232,7 +236,7 @@ FAIL="[ \033[0;31mFAIL\033[0;0m ]"
 
 printf "File\t Output\t Return code\n"
 
-for i in 0{1..9} {10..53}
+for i in 0{1..9} {10..54}
 do
     printf "Test${i}\t"
     if [ $i == "01" ] || [ $i == "04" ];
