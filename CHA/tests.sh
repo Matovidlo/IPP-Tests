@@ -173,7 +173,7 @@ $INTERPRETER $TASK.$EXTENSION --pretty-xml > ./Results/test41.out 2> ./Results/t
 echo -n $? > ./Results/test41.!!!
 
 # test42: Input is a directory (whole dir)
-$INTERPRETER $TASK.$EXTENSION --input=./ --pretty-xml > ./Results/test42.out 2> ./Results/test42.err
+$INTERPRETER $TASK.$EXTENSION --pretty-xml > ./Results/test42.out 2> ./Results/test42.err
 echo -n $? > ./Results/test42.!!!
 
 # test43: Output file
@@ -228,6 +228,18 @@ echo -n $? > ./Results/test53.!!!
 $INTERPRETER $TASK.$EXTENSION --input=./Tests/struct_enum_params.h > ./Results/test54.out 2> ./Results/test54.err
 echo -n $? > ./Results/test54.!!!
 
+# test55: PAR / FUN extension tests
+$INTERPRETER $TASK.$EXTENSION --input=./ExtensionTests/test1.h > ./Results/test55.out 2> ./Results/test55.err
+echo -n $? > ./Results/test55.!!!
+
+# test56: Support for shortened arguments
+$INTERPRETER $TASK.$EXTENSION -i ./Tests/subdir/subsubdir/trivial.h > ./Results/test56.out 2> ./Results/test56.err
+echo -n $? > ./Results/test56.!!!
+
+# test57: Arguments duplication
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/struct_enum_params.h -i ./Tests/subdir/subsubdir/trivial.h > ./Results/test57.out 2> ./Results/test57.err
+echo -n $? > ./Results/test57.!!!
+
 ################################################################################
 
 
@@ -236,25 +248,26 @@ FAIL="[ \033[0;31mFAIL\033[0;0m ]"
 
 printf "File\t Output\t Return code\n"
 
-for i in 0{1..9} {10..54}
+for i in 0{1..9} {10..57}
 do
     printf "Test${i}\t"
     if [ $i == "01" ] || [ $i == "04" ];
         then
-            diff "Results/test${i}.out" "Reff/test00.out" > /dev/null
+            diff "Results/test${i}.out" "RefResults/test00.out" > /dev/null
             if [ $? == 0 ]; then printf "$FAIL"; else printf "$PASS"; fi;
         else
-            diff "Reff/test00.!!!" "Reff/test${i}.!!!" > /dev/null
+            diff "RefResults/test00.!!!" "RefResults/test${i}.!!!" > /dev/null
             if [ $? == 0 ];
                 then
-                    java -jar jexamxml/jexamxml.jar Results/test${i}.out Reff/test${i}.out delta.xml cha_options >/dev/null
+                    java -jar jexamxml/jexamxml.jar Results/test${i}.out RefResults/test${i}.out delta.xml cha_options >/dev/null
                     if [ $? == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi;
                 else
-                    diff "Results/test${i}.out" "Reff/test00.out"
+                    diff "Results/test${i}.out" "RefResults/test00.out"
                     if [ $? == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi;
             fi;
     fi;
-    diff "Results/test${i}.!!!" "Reff/test${i}.!!!" > /dev/null
+    diff "Results/test${i}.!!!" "RefResults/test${i}.!!!" > /dev/null
     if [ $? == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi
+    if [ $i == "55" ]; then printf "\t(needs extensions)"; fi
     printf "\n"
 done

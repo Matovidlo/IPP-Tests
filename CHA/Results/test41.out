@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <functions dir="./">
+    <function file="ExtensionTests/test1.h" name="xxxxxxxxxxxxx" varargs="no" rettype="char (*(*)[])()"/>
+    <function file="ExtensionTests/test1.h" name="" varargs="no" rettype=""/>
+    <function file="ExtensionTests/test1.h" name="" varargs="no" rettype=""/>
     <function file="Tests/struct_enum_params.h" name="foo" varargs="no" rettype="float">
         <param number="1" type="struct Student"/>
     </function>
