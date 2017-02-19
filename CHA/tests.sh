@@ -229,7 +229,7 @@ $INTERPRETER $TASK.$EXTENSION --input=./Tests/struct_enum_params.h > ./Results/t
 echo -n $? > ./Results/test54.!!!
 
 # test55: PAR / FUN extension tests
-$INTERPRETER $TASK.$EXTENSION --input=./ExtensionTests/test1.h > ./Results/test55.out 2> ./Results/test55.err
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/fun_par.h --pretty-xml=6 > ./Results/test55.out 2> ./Results/test55.err
 echo -n $? > ./Results/test55.!!!
 
 # test56: Support for shortened arguments
@@ -243,8 +243,8 @@ echo -n $? > ./Results/test57.!!!
 ################################################################################
 
 
-PASS="[ \033[0;32mOK\033[0;0m ]"
-FAIL="[ \033[0;31mFAIL\033[0;0m ]"
+PASS=" [ \033[0;32mOK\033[0;0m ]"
+FAIL=" [ \033[0;31mFAIL\033[0;0m ]"
 
 printf "File\t Output\t Return code\n"
 
@@ -267,6 +267,7 @@ do
             fi;
     fi;
     diff "Results/test${i}.!!!" "RefResults/test${i}.!!!" > /dev/null
+    printf "   ";
     if [ $? == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi
     if [ $i == "55" ]; then printf "\t(needs extensions)"; fi
     printf "\n"
