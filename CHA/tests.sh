@@ -243,14 +243,14 @@ echo -n $? > ./Results/test57.!!!
 ################################################################################
 
 
-PASS=" [ \033[0;32mOK\033[0;0m ]"
-FAIL=" [ \033[0;31mFAIL\033[0;0m ]"
+PASS="[ \033[0;32mOK\033[0;0m ]"
+FAIL="[ \033[0;31mFAIL\033[0;0m ]"
 
 printf "File\t Output\t Return code\n"
 
 for i in 0{1..9} {10..57}
 do
-    printf "Test${i}\t"
+    printf "Test${i}\t "
     if [ $i == "01" ] || [ $i == "04" ];
         then
             diff "Results/test${i}.out" "RefResults/test00.out" > /dev/null
