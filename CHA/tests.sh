@@ -214,17 +214,25 @@ echo -n $? > ./Results/test50.!!!
 chmod 000 ./Tests/restricted.h
 $INTERPRETER $TASK.$EXTENSION --input=./Tests/restricted.h > ./Results/test51.out 2> ./Results/test51.err
 echo -n $? > ./Results/test51.!!!
+
+# test52: No permissions to read file when scanning dir
+$INTERPRETER $TASK.$EXTENSION --input=./Tests > ./Results/test52.out 2> ./Results/test52.err
+echo -n $? > ./Results/test52.!!!
 chmod 664 ./Tests/restricted.h
+
+# test53: Output file is dir
+$INTERPRETER $TASK.$EXTENSION --input=./Tests > ./Results/test53.out --output=out/ 2> ./Results/test53.err
+echo -n $? > ./Results/test53.!!!
 
 ################################################################################
 
 
-PASS="[ \033[0;32mPASS\033[0;0m ]"
+PASS="[ \033[0;32mOK\033[0;0m ]"
 FAIL="[ \033[0;31mFAIL\033[0;0m ]"
 
-printf "File\t Output\t Return\n"
+printf "File\t Output\t Return code\n"
 
-for i in 0{1..9} {10..51}
+for i in 0{1..9} {10..53}
 do
     printf "Test${i}\t"
     if [ $i == "01" ] || [ $i == "04" ];
