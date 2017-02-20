@@ -280,6 +280,25 @@ echo -n $? > ./Results/test64.!!!
 $INTERPRETER $TASK.$EXTENSION --input=./Tests/more_underscores.h > ./Results/test65.out 2> ./Results/test65.err
 echo -n $? > ./Results/test65.!!!
 
+# test66: Missing -- in argument
+$INTERPRETER $TASK.$EXTENSION input > ./Results/test66.out 2> ./Results/test66.err
+echo -n $? > ./Results/test66.!!!
+
+# test67: Bad integer value for pretty-xml
+$INTERPRETER $TASK.$EXTENSION --pretty-xml=cislo --max-par=cislo > ./Results/test67.out 2> ./Results/test67.err
+echo -n $? > ./Results/test67.!!!
+
+# test68: Bad integer value for max-par
+$INTERPRETER $TASK.$EXTENSION --max-par=cislo > ./Results/test68.out 2> ./Results/test68.err
+echo -n $? > ./Results/test68.!!!
+
+# test69: Function in comments / literals
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/comments_literals.h > ./Results/test69.out 2> ./Results/test69.err
+echo -n $? > ./Results/test69.!!!
+
+# test70: Structs / custom types in headers
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/structs_custom_types.h --pretty-xml > ./Results/test70.out 2> ./Results/test70.err
+echo -n $? > ./Results/test70.!!!
 ################################################################################
 
 
@@ -288,10 +307,10 @@ FAIL="[ \033[0;31mFAIL\033[0;0m ]"
 
 printf "File\t Output\t Return code\n"
 
-for i in 0{1..9} {10..65}
+for i in 0{1..9} {10..70}
 do
     printf "Test${i}\t "
-    if [ $i == "01" ] || [ $i == "04" ];
+    if [ $i == "01" ] || [ $i == "04" ] || [ $i == "52" ];
         then
             diff "Results/test${i}.out" "RefResults/test00.out" > /dev/null
             if [ $? == 0 ]; then printf "$FAIL"; else printf "$PASS"; fi;
@@ -309,6 +328,7 @@ do
     diff "Results/test${i}.!!!" "RefResults/test${i}.!!!" > /dev/null
     printf "   ";
     if [ $? == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi
+	if [ $i == "41" ] || [ $i == "42" ] || [ $i == "43" ]; then printf "\t(checks all headers in CWD)"; fi
     if [ $i == "55" ]; then printf "\t(needs support for extensions)"; fi
 	if [ $i == "56" ]; then printf "\t(needs support for shortened arguments)"; fi
     printf "\n"
