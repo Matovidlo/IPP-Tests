@@ -11,7 +11,7 @@ elif [ -f "cha.py" ];
 then
 	INTERPRETER="python3"
 	EXTENSION=py
-else 
+else
     echo "Error: cha.php or cha.py was not found."
 	exit 1
 fi
@@ -248,6 +248,30 @@ echo -n $? > ./Results/test56.!!!
 $INTERPRETER $TASK.$EXTENSION --input=./Tests/struct_enum_params.h -i ./Tests/subdir/subsubdir/trivial.h > ./Results/test57.out 2> ./Results/test57.err
 echo -n $? > ./Results/test57.!!!
 
+# test58: Empty input value
+$INTERPRETER $TASK.$EXTENSION --input= > ./Results/test58.out 2> ./Results/test58.err
+echo -n $? > ./Results/test58.!!!
+
+# test59: Empty output value
+$INTERPRETER $TASK.$EXTENSION --output= > ./Results/test59.out 2> ./Results/test59.err
+echo -n $? > ./Results/test59.!!!
+
+# test60: Bad arguments, no value for input
+$INTERPRETER $TASK.$EXTENSION --input > ./Results/test60.out 2> ./Results/test60.err
+echo -n $? > ./Results/test60.!!!
+
+# test61: Bad arguments, help with value
+$INTERPRETER $TASK.$EXTENSION --help=ahoj > ./Results/test61.out 2> ./Results/test61.err
+echo -n $? > ./Results/test61.!!!
+
+# test62: Bad arguments, max-par with no value
+$INTERPRETER $TASK.$EXTENSION --max-par= > ./Results/test62.out 2> ./Results/test62.err
+echo -n $? > ./Results/test62.!!!
+
+# test63: Bad arguments, max-par with no value
+$INTERPRETER $TASK.$EXTENSION --max-par > ./Results/test63.out 2> ./Results/test63.err
+echo -n $? > ./Results/test63.!!!
+
 ################################################################################
 
 
@@ -256,7 +280,7 @@ FAIL="[ \033[0;31mFAIL\033[0;0m ]"
 
 printf "File\t Output\t Return code\n"
 
-for i in 0{1..9} {10..57}
+for i in 0{1..9} {10..63}
 do
     printf "Test${i}\t "
     if [ $i == "01" ] || [ $i == "04" ];
