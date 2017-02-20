@@ -3,10 +3,18 @@
 # Komplexnejsie testy CHA
 
 TASK=cha
- INTERPRETER="php -d open_basedir=\"\""
- EXTENSION=php
-#INTERPRETER="python3"
-#EXTENSION=py
+if [ -f "cha.php" ];
+then
+	INTERPRETER="php -d open_basedir=\"\""
+	EXTENSION=php
+elif [ -f "cha.py" ];
+then
+	INTERPRETER="python3"
+	EXTENSION=py
+else 
+    echo "Error: cha.php or cha.py was not found."
+	exit 1
+fi
 
 # test01: Test parametru --help (nekontroluje sa vystup na stdout)
 $INTERPRETER $TASK.$EXTENSION --help > ./Results/test01.out 2> ./Results/test01.err
