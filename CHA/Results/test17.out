@@ -1,2 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<functions dir=""><function file="./Tests/subdir/subsubdir/trivial.h" name="isBraceFormat" varargs="no" rettype="int"/><function file="./Tests/subdir/subsubdir/trivial.h" name="getDirectiveNestLevel" varargs="no" rettype="unsigned int"/></functions>
+<?xml version="1.0" encoding="UTF-8"?><functions dir=""><function file="./Tests/subdir/subsubdir/trivial.h" name="isBraceFormat" varargs="no" rettype="int"/><function file="./Tests/subdir/subsubdir/trivial.h" name="getDirectiveNestLevel" varargs="no" rettype="unsigned int"/></functions>

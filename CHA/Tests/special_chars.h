@@ -1,3 +1,5 @@
-int vypíš_dačo(int šírka);
+# int vypíš_dačo(int šírka);
 
-float nájdi_najmenší_prvok(void);
+// int nájdi_najmenší_prvok(void);
+
+int i(void o, int i, char* a);

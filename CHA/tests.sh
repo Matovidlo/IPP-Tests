@@ -245,7 +245,7 @@ $INTERPRETER $TASK.$EXTENSION -i ./Tests/subdir/subsubdir/trivial.h > ./Results/
 echo -n $? > ./Results/test56.!!!
 
 # test57: Arguments duplication
-$INTERPRETER $TASK.$EXTENSION --input=./Tests/struct_enum_params.h -i ./Tests/subdir/subsubdir/trivial.h > ./Results/test57.out 2> ./Results/test57.err
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/struct_enum_params.h --input=./Tests/subdir/subsubdir/trivial.h > ./Results/test57.out 2> ./Results/test57.err
 echo -n $? > ./Results/test57.!!!
 
 # test58: Empty input value
@@ -276,6 +276,10 @@ echo -n $? > ./Results/test63.!!!
 $INTERPRETER $TASK.$EXTENSION --input=./Tests/special_chars.h > ./Results/test64.out 2> ./Results/test64.err
 echo -n $? > ./Results/test64.!!!
 
+# test65: Underscores in function / arg names
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/more_underscores.h > ./Results/test65.out 2> ./Results/test65.err
+echo -n $? > ./Results/test65.!!!
+
 ################################################################################
 
 
@@ -284,7 +288,7 @@ FAIL="[ \033[0;31mFAIL\033[0;0m ]"
 
 printf "File\t Output\t Return code\n"
 
-for i in 0{1..9} {10..64}
+for i in 0{1..9} {10..65}
 do
     printf "Test${i}\t "
     if [ $i == "01" ] || [ $i == "04" ];
@@ -305,6 +309,7 @@ do
     diff "Results/test${i}.!!!" "RefResults/test${i}.!!!" > /dev/null
     printf "   ";
     if [ $? == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi
-    if [ $i == "55" ]; then printf "\t(needs extensions)"; fi
+    if [ $i == "55" ]; then printf "\t(needs support for extensions)"; fi
+	if [ $i == "56" ]; then printf "\t(needs support for shortened arguments)"; fi
     printf "\n"
 done
