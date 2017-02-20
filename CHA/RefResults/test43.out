@@ -13,6 +13,10 @@
         <param number="1" type="char *"/>
         <param number="2" type="_Bool"/>
     </function>
+    <function file="Tests/special_chars.h" name="vypíš_dačo" varargs="no" rettype="int">
+        <param number="1" type="int"/>
+    </function>
+    <function file="Tests/special_chars.h" name="nájdi_najmenší_prvok" varargs="no" rettype="float"/>
     <function file="Tests/single.h" name="single" varargs="no" rettype="void">
         <param number="1" type="double *"/>
         <param number="2" type="char"/>

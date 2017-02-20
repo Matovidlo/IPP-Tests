@@ -1,1 +1,2 @@
-<?xml version="1.0" encoding="UTF-8"?><functions dir=""><function file="./Tests/underscore.h" name="function_with_underscores" varargs="no" rettype="double"><param number="1" type="char *"/><param number="2" type="_Bool"/></function></functions>
+<?xml version="1.0" encoding="UTF-8"?>
+<functions dir=""><function file="./Tests/underscore.h" name="function_with_underscores" varargs="no" rettype="double"><param number="1" type="char *"/><param number="2" type="_Bool"/></function></functions>

@@ -272,6 +272,10 @@ echo -n $? > ./Results/test62.!!!
 $INTERPRETER $TASK.$EXTENSION --max-par > ./Results/test63.out 2> ./Results/test63.err
 echo -n $? > ./Results/test63.!!!
 
+# test64: Special chars (diacritic, utf8 chars) in function or argument names
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/special_chars.h > ./Results/test64.out 2> ./Results/test64.err
+echo -n $? > ./Results/test64.!!!
+
 ################################################################################
 
 
@@ -280,7 +284,7 @@ FAIL="[ \033[0;31mFAIL\033[0;0m ]"
 
 printf "File\t Output\t Return code\n"
 
-for i in 0{1..9} {10..63}
+for i in 0{1..9} {10..64}
 do
     printf "Test${i}\t "
     if [ $i == "01" ] || [ $i == "04" ];
