@@ -326,8 +326,9 @@ do
             fi;
     fi;
     diff "Results/test${i}.!!!" "RefResults/test${i}.!!!" > /dev/null
+    code=$?
     printf "   ";
-    if [ $? == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi
+    if [ $code == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi
 	if [ $i == "41" ] || [ $i == "42" ] || [ $i == "43" ]; then printf "\t(checks all headers in CWD)"; fi
     if [ $i == "55" ]; then printf "\t(needs support for extensions)"; fi
 	if [ $i == "56" ]; then printf "\t(needs support for shortened arguments)"; fi
