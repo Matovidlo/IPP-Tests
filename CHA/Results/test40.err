@@ -1,1 +1,3 @@
+PHP Warning:  XMLWriter::openUri(/hopefully-no-write-permissions): failed to open stream: Permission denied in /home/xbolva00/IPP/PR1/IPP-Tests/CHA/cha.php on line 280
+PHP Warning:  XMLWriter::openUri(): xmlNewTextWriterFilename : cannot open uri in /home/xbolva00/IPP/PR1/IPP-Tests/CHA/cha.php on line 280
 Cannot open output file.
