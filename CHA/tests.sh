@@ -16,6 +16,11 @@ else
 	exit 1
 fi
 
+if [ ! -f ./Results/ ];
+then
+	mkdir ./Results/
+fi
+
 # test01: Test parametru --help (nekontroluje sa vystup na stdout)
 $INTERPRETER $TASK.$EXTENSION --help > ./Results/test01.out 2> ./Results/test01.err
 echo -n $? > ./Results/test01.!!!
