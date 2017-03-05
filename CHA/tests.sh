@@ -16,9 +16,10 @@ else
 	exit 1
 fi
 
-if [ ! -f ./Results/ ];
+res=./Results/
+if [ ! -d "$res" ];
 then
-	mkdir ./Results/
+	mkdir "$res"
 fi
 
 # test01: Test parametru --help (nekontroluje sa vystup na stdout)
@@ -304,6 +305,10 @@ echo -n $? > ./Results/test69.!!!
 # test70: Structs / custom types in headers
 $INTERPRETER $TASK.$EXTENSION --input=./Tests/structs_custom_types.h --pretty-xml > ./Results/test70.out 2> ./Results/test70.err
 echo -n $? > ./Results/test70.!!!
+
+# test71: Empty dir
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/emptydir > ./Results/test71.out 2> ./Results/test71.err
+echo -n $? > ./Results/test71.!!!
 ################################################################################
 
 
@@ -312,7 +317,7 @@ FAIL="[ \033[0;31mFAIL\033[0;0m ]"
 
 printf "File\t Output\t Return code\n"
 
-for i in 0{1..9} {10..70}
+for i in 0{1..9} {10..71}
 do
     printf "Test${i}\t "
     if [ $i == "01" ] || [ $i == "04" ] || [ $i == "52" ];
