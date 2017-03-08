@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions dir="">
+      <function file="./Tests/fun_par.h" name="xxxxxxxxxxxxx" varargs="no" rettype="char (*(*)[])()"/>
+      <function file="./Tests/fun_par.h" name="func2" varargs="yes" rettype="int*(*)(int, int[], int)">
+            <param number="1" type="void (*)(int)"/>
+      </function>
+      <function file="./Tests/fun_par.h" name="func3" varargs="no" rettype="int*(*)(const int (*)[10])">
+            <param number="1" type="void**(*) (int*[] , char**(*)(char*, char**))"/>
+      </function>
+</functions>

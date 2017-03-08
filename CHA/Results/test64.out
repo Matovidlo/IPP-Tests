@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><functions dir=""><function file="./Tests/special_chars.h" name="i" varargs="no" rettype="int"><param number="1" type="void"/><param number="2" type="int"/><param number="3" type="char*"/></function></functions>

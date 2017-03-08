@@ -23,10 +23,10 @@
         <param number="2" type="char"/>
     </function>
     <function file="Tests/fun_par.h" name="xxxxxxxxxxxxx" varargs="no" rettype="char (*(*)[])()"/>
-    <function file="Tests/fun_par.h" name="func2" varargs="yes" rettype="int * (*)(int, int[],  int)">
+    <function file="Tests/fun_par.h" name="func2" varargs="yes" rettype="int * (*    )(int, int[],  int)">
         <param number="1" type="void (*)(int)"/>
     </function>
-    <function file="Tests/fun_par.h" name="func3" varargs="no" rettype="int * (*)(const int (*)[10])">
+    <function file="Tests/fun_par.h" name="func3" varargs="no" rettype="int * (*           )(const int (*)[10])">
         <param number="1" type="void ** (*) (int *[]     , char **(*)(char *, char **))"/>
     </function>
     <function file="Tests/comments_literals.h" name="fun" varargs="yes" rettype="double">

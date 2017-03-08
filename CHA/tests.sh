@@ -309,6 +309,10 @@ echo -n $? > ./Results/test70.!!!
 # test71: Empty dir
 $INTERPRETER $TASK.$EXTENSION --input=./Tests/emptydir > ./Results/test71.out 2> ./Results/test71.err
 echo -n $? > ./Results/test71.!!!
+
+# test72: PAR / FUN extension tests
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/fun_par.h --pretty-xml=6 --remove-whitespace > ./Results/test72.out 2> ./Results/test72.err
+echo -n $? > ./Results/test72.!!!
 ################################################################################
 
 
@@ -317,7 +321,7 @@ FAIL="[ \033[0;31mFAIL\033[0;0m ]"
 
 printf "File\t Output\t Return code\n"
 
-for i in 0{1..9} {10..71}
+for i in 0{1..9} {10..72}
 do
     printf "Test${i}\t "
     if [ $i == "01" ] || [ $i == "04" ] || [ $i == "52" ];
@@ -339,8 +343,8 @@ do
     code=$?
     printf "   ";
     if [ $code == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi
-	if [ $i == "41" ] || [ $i == "42" ] || [ $i == "43" ]; then printf "\t(checks all headers in CWD)"; fi
-    if [ $i == "55" ]; then printf "\t(needs support for extensions)"; fi
+	if [ $i == "41" ] || [ $i == "42" ] || [ $i == "43" ]; then printf "\t(checks ALL headers in CWD)"; fi
+    if [ $i == "55" ] || [ $i == "72" ]; then printf "\t(needs support for extensions)"; fi
 	if [ $i == "56" ]; then printf "\t(needs support for shortened arguments)"; fi
     printf "\n"
 done
