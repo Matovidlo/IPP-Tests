@@ -331,7 +331,7 @@ do
                     java -jar jexamxml/jexamxml.jar Results/test${i}.out RefResults/test${i}.out delta.xml cha_options >/dev/null
                     if [ $? == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi;
                 else
-                    diff "Results/test${i}.out" "RefResults/test00.out"
+                    diff "Results/test${i}.out" "RefResults/test00.out" > /dev/null
                     if [ $? == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi;
             fi;
     fi;
