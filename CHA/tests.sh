@@ -320,7 +320,7 @@ printf "File\t Output\t Return code\n"
 for i in 0{1..9} {10..71}
 do
     printf "Test${i}\t "
-    if [ $i == "01" ] || [ $i == "04" ] || [ $i == "52" ];
+    if [ $i == "01" ] || [ $i == "04" ];
         then
             diff "Results/test${i}.out" "RefResults/test00.out" > /dev/null
             if [ $? == 0 ]; then printf "$FAIL"; else printf "$PASS"; fi;
