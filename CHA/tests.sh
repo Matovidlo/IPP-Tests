@@ -247,7 +247,7 @@ $INTERPRETER $TASK.$EXTENSION --input=./Tests/fun_par.h --pretty-xml=6 > ./Resul
 echo -n $? > ./Results/test55.!!!
 
 # test56: Support for shortened arguments
-$INTERPRETER $TASK.$EXTENSION -i ./Tests/subdir/subsubdir/trivial.h > ./Results/test56.out 2> ./Results/test56.err
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/subdir/subsubdir/trivial.h > ./Results/test56.out 2> ./Results/test56.err
 echo -n $? > ./Results/test56.!!!
 
 # test57: Arguments duplication
