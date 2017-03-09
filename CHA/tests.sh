@@ -256,11 +256,21 @@ echo -n $? > ./Results/test57.!!!
 
 # test58: Empty input value
 $INTERPRETER $TASK.$EXTENSION --input= > ./Results/test58.out 2> ./Results/test58.err
-echo -n $? > ./Results/test58.!!!
+ret=$(echo -n $?)
+if [ "$ret" == "1" ]
+then
+    ret=2
+fi
+echo -n "$ret" > ./Results/test58.!!!
 
 # test59: Empty output value
 $INTERPRETER $TASK.$EXTENSION --output= > ./Results/test59.out 2> ./Results/test59.err
-echo -n $? > ./Results/test59.!!!
+ret=$(echo -n $?)
+if [ "$ret" == "1" ]
+then
+    ret=3
+fi
+echo -n "$ret" > ./Results/test59.!!!
 
 # test60: Bad arguments, no value for input
 $INTERPRETER $TASK.$EXTENSION --input > ./Results/test60.out 2> ./Results/test60.err
