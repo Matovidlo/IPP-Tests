@@ -14,7 +14,7 @@
         <param number="2" type="_Bool"/>
     </function>
     <function file="Tests/special_chars.h" name="i" varargs="no" rettype="int">
-        <param number="1" type="void"/>
+        <param number="1" type="void*"/>
         <param number="2" type="int"/>
         <param number="3" type="char*"/>
     </function>
@@ -101,9 +101,34 @@
         <param number="2" type="matrix_s *"/>
         <param number="3" type="matrix_s **"/>
     </function>
+    <function file="Tests/struct_unnamed.h" name="dlouhy_nazev" varargs="no" rettype="void">
+        <param number="1" type="struct pes"/>
+        <param number="2" type="struct pes *"/>
+        <param number="3" type="struct pes []"/>
+        <param number="4" type="struct pes"/>
+    </function>
+    <function file="Tests/struct_unnamed.h" name="kratky_nazev" varargs="no" rettype="void">
+        <param number="1" type="Pes"/>
+        <param number="2" type="Pes *"/>
+        <param number="3" type="Pes []"/>
+    </function>
+    <function file="Tests/struct_unnamed.h" name="vynechany_dlouhy_nazev" varargs="no" rettype="void">
+        <param number="1" type="struct pes"/>
+        <param number="2" type="struct pes*"/>
+        <param number="3" type="struct pes[]"/>
+    </function>
+    <function file="Tests/struct_unnamed.h" name="vynechany_kratky_nazev" varargs="no" rettype="void">
+        <param number="1" type="Pes"/>
+        <param number="2" type="Pes*"/>
+        <param number="3" type="Pes[]"/>
+    </function>
+    <function file="Tests/struct_unnamed.h" name="pole" varargs="no" rettype="void">
+        <param number="1" type="int  []"/>
+        <param number="2" type="int []"/>
+    </function>
     <function file="Tests/function_body.h" name="main" varargs="no" rettype="int"/>
     <function file="Tests/function_body.h" name="foo" varargs="no" rettype="char"/>
-    <function file="Tests/more_underscores.h" name="__foo" varargs="no" rettype="extern inline"/>
+    <function file="Tests/more_underscores.h" name="__foo" varargs="no" rettype="extern inline void"/>
     <function file="Tests/more_underscores.h" name="_f" varargs="no" rettype="int"/>
     <function file="Tests/more_underscores.h" name="fo__" varargs="no" rettype="char">
         <param number="1" type="short"/>

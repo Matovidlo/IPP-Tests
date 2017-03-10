@@ -338,7 +338,7 @@ printf "File\t Output\t Return code\n"
 for i in 0{1..9} {10..73}
 do
     printf "Test${i}\t "
-    if [ $i == "01" ] || [ $i == "04" ];
+    if [ $i == "01" ] || [ $i == "04" ] || [ $i == "52" ];
         then
             diff "Results/test${i}.out" "RefResults/test00.out" > /dev/null
             if [ $? == 0 ]; then printf "$FAIL"; else printf "$PASS"; fi;
@@ -357,7 +357,8 @@ do
     code=$?
     printf "   ";
     if [ $code == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi
-	if [ $i == "41" ] || [ $i == "42" ] || [ $i == "43" ]; then printf "\t(checks ALL headers in CWD)"; fi
+	if [ $i == "51" ] || [ $i == "52" ]; then printf "\t(may need root)"; fi
+    if [ $i == "41" ] || [ $i == "42" ] || [ $i == "43" ]; then printf "\t(checks ALL headers in CWD)"; fi
     if [ $i == "55" ] || [ $i == "72" ] || [ $i == "73" ]; then printf "\t(needs support for extensions)"; fi
 	if [ $i == "56" ]; then printf "\t(needs support for shortened arguments)"; fi
     printf "\n"
