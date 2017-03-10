@@ -1,0 +1,9 @@
+Usage of C Header Analysis:
+--help                Prints program help.
+--input=fileordir     Input file or directory to analyze C headers. if not set, the current directory will be used.
+--output=filename     Output XML file. If not set, output will be printed to the stdout.
+--pretty-xml=k        Indents XML elements by k spaces. Default value is 4.
+--no-inline           Skips inline functions.
+--max-par=n           Analyzes only functions with n parameters.
+--no-duplicates       Ignores function duplicates, uses the first occurance.
+--remove-whitespace   Removes whitespaces in function return types.
