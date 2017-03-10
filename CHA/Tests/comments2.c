@@ -1,2 +1,2 @@
 /* komentář: \*/
-string fce(signed a);
+char fce(signed a);

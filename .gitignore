@@ -1,2 +1,4 @@
 *.php
 *.txt
+CHA/Results/*
+CHA/delta.xml

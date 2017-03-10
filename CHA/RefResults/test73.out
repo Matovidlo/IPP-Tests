@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<functions dir="">
+ <function file="./Tests/struct_unnamed.h" name="dlouhy_nazev" varargs="no" rettype="void">
+  <param number="1" type="struct pes"/>
+  <param number="2" type="struct pes *"/>
+  <param number="3" type="struct pes []"/>
+  <param number="4" type="struct pes"/>
+ </function>
+ <function file="./Tests/struct_unnamed.h" name="kratky_nazev" varargs="no" rettype="void">
+  <param number="1" type="Pes"/>
+  <param number="2" type="Pes *"/>
+  <param number="3" type="Pes []"/>
+ </function>
+ <function file="./Tests/struct_unnamed.h" name="vynechany_dlouhy_nazev" varargs="no" rettype="void">
+  <param number="1" type="struct pes"/>
+  <param number="2" type="struct pes*"/>
+  <param number="3" type="struct pes[]"/>
+ </function>
+ <function file="./Tests/struct_unnamed.h" name="vynechany_kratky_nazev" varargs="no" rettype="void">
+  <param number="1" type="Pes"/>
+  <param number="2" type="Pes*"/>
+  <param number="3" type="Pes[]"/>
+ </function>
+ <function file="./Tests/struct_unnamed.h" name="pole" varargs="no" rettype="void">
+  <param number="1" type="int  []"/>
+  <param number="2" type="int []"/>
+ </function>
+</functions>

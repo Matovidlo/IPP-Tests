@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<functions dir="">
-    <function file="Tests/comments2.c" name="fce" varargs="no" rettype="string">
-        <param number="1" type="signed"/>
-    </function>
-</functions>

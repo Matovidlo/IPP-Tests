@@ -247,7 +247,7 @@ $INTERPRETER $TASK.$EXTENSION --input=./Tests/fun_par.h --pretty-xml=6 > ./Resul
 echo -n $? > ./Results/test55.!!!
 
 # test56: Support for shortened arguments
-$INTERPRETER $TASK.$EXTENSION -i ./Tests/subdir/subsubdir/trivial.h > ./Results/test56.out 2> ./Results/test56.err
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/subdir/subsubdir/trivial.h > ./Results/test56.out 2> ./Results/test56.err
 echo -n $? > ./Results/test56.!!!
 
 # test57: Arguments duplication
@@ -256,11 +256,21 @@ echo -n $? > ./Results/test57.!!!
 
 # test58: Empty input value
 $INTERPRETER $TASK.$EXTENSION --input= > ./Results/test58.out 2> ./Results/test58.err
-echo -n $? > ./Results/test58.!!!
+ret=$(echo -n $?)
+if [ "$ret" == "1" ]
+then
+    ret=2
+fi
+echo -n "$ret" > ./Results/test58.!!!
 
 # test59: Empty output value
 $INTERPRETER $TASK.$EXTENSION --output= > ./Results/test59.out 2> ./Results/test59.err
-echo -n $? > ./Results/test59.!!!
+ret=$(echo -n $?)
+if [ "$ret" == "1" ]
+then
+    ret=3
+fi
+echo -n "$ret" > ./Results/test59.!!!
 
 # test60: Bad arguments, no value for input
 $INTERPRETER $TASK.$EXTENSION --input > ./Results/test60.out 2> ./Results/test60.err
@@ -313,6 +323,10 @@ echo -n $? > ./Results/test71.!!!
 # test72: PAR / FUN extension tests
 $INTERPRETER $TASK.$EXTENSION --input=./Tests/fun_par.h --pretty-xml=6 --remove-whitespace > ./Results/test72.out 2> ./Results/test72.err
 echo -n $? > ./Results/test72.!!!
+
+# test73: Structs with PAR / FUN extension tests
+$INTERPRETER $TASK.$EXTENSION --input=./Tests/struct_unnamed.h --pretty-xml=1 > ./Results/test73.out 2> ./Results/test73.err
+echo -n $? > ./Results/test73.!!!
 ################################################################################
 
 
@@ -321,10 +335,10 @@ FAIL="[ \033[0;31mFAIL\033[0;0m ]"
 
 printf "File\t Output\t Return code\n"
 
-for i in 0{1..9} {10..72}
+for i in 0{1..9} {10..73}
 do
     printf "Test${i}\t "
-    if [ $i == "01" ] || [ $i == "04" ] || [ $i == "52" ];
+    if [ $i == "01" ] || [ $i == "04" ];
         then
             diff "Results/test${i}.out" "RefResults/test00.out" > /dev/null
             if [ $? == 0 ]; then printf "$FAIL"; else printf "$PASS"; fi;
@@ -335,7 +349,7 @@ do
                     java -jar jexamxml/jexamxml.jar Results/test${i}.out RefResults/test${i}.out delta.xml cha_options >/dev/null
                     if [ $? == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi;
                 else
-                    diff "Results/test${i}.out" "RefResults/test00.out"
+                    diff "Results/test${i}.out" "RefResults/test00.out" > /dev/null
                     if [ $? == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi;
             fi;
     fi;
@@ -344,7 +358,7 @@ do
     printf "   ";
     if [ $code == 0 ]; then printf "$PASS"; else printf "$FAIL"; fi
 	if [ $i == "41" ] || [ $i == "42" ] || [ $i == "43" ]; then printf "\t(checks ALL headers in CWD)"; fi
-    if [ $i == "55" ] || [ $i == "72" ]; then printf "\t(needs support for extensions)"; fi
+    if [ $i == "55" ] || [ $i == "72" ] || [ $i == "73" ]; then printf "\t(needs support for extensions)"; fi
 	if [ $i == "56" ]; then printf "\t(needs support for shortened arguments)"; fi
     printf "\n"
 done

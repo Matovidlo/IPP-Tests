@@ -1,4 +1,4 @@
-extern inline __foo(void);
+extern inline void __foo(void);
 int _f();
 char fo__(short a);
 double f____f(double a, ...);

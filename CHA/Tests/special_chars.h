@@ -2,4 +2,4 @@
 
 // int nájdi_najmenší_prvok(void);
 
-int i(void o, int i, char* a);
+int i(void* o, int i, char* a);
