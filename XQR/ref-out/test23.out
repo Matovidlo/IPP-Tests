@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TEST><book id="bk107" order="1">
+      <author>Thurman, Paula</author>
+      <title>Splish Splash</title>
+      <genre>Romance</genre>
+      <price>4.95</price>
+      <publish_date>1990</publish_date>
+      <description>A deep sea diver finds true love twenty 
+      thousand leagues beneath the sea.</description>
+   </book>
+   <book id="bk101" order="2">
+      <author>Gambardella, Matthew</author>
+      <title>XML Developer's Guide</title>
+      <genre>Computer</genre>
+      <price>44.95</price>
+      <publish_date>1989</publish_date>
+      <description>An in-depth look at creating applications 
+      with XML.</description>
+   </book></TEST>

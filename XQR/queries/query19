@@ -1,0 +1,1 @@
+SELECT book FROM ROOT ORDER BY price ASC

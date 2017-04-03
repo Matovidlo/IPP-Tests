@@ -1,0 +1,23 @@
+FROM ROOT NO header..............:
+book FROM library................:
+LIMIT 8..........................:
+LIMIT -1.........................:
+WHERE  >.........................:
+WHERE  <.........................:
+WHERE CONTAINS...................:
+WHERE  =.........................:
+WHERE AND........................:
+WHERE OR.........................:
+WHERE NOT........................:
+WHERE ().........................:
+WHERE NOT AND NOT................:
+WHERE NOT OR NOT.................:
+WHERE book.id..,,,...............:
+FROM room.id WHERE book.id.......:
+WHERE .id........................:
+FROM .id WHERE .id...............:
+[EXTRA]ORDER BY ASC..............:
+[EXTRA]ORDER BY DESC.............:
+[EXTRA]ORDER BY..................:
+[EXTRA]AND OR AND................:
+[EXTRA]AND OR AND ORDER BY.......:

@@ -1,0 +1,23 @@
+--help
+--help -n --root=asd
+--input=somefolder/in/test01.in --qf=queries/query1
+--input=in/test01.in --qf=queries/query1
+--input=in/test01.in --qf=queries/query1 --query="SELECT book FROM ROOT"
+--input=in/test01.in --qf=
+--input=in/test01.in 
+--input=in/test01.in --qf=queries/empty_query
+--input=in/test01.in  --query=
+--input=in/test01.in --qf=queries/bad_query1
+--input=in/test01.in --qf=queries/bad_query2
+--input=in/test01.in --qf=queries/bad_query3
+--input=in/test01.in --qf=queries/bad_query4
+--input=in/test01.in --qf=queries/bad_query5
+--input=in/test01.in --qf=queries/bad_query6
+--input=in/test01.in --qf=queries/bad_query7
+--input=in/test01.in --qf=queries/bad_query8
+--input=in/test01.in --qf=queries/bad_query9
+--input=in/test01.in --qf=queries/bad_query10
+--input=in/test01.in --qf=queries/bad_query11
+--input=in/test01.in --qf=queries/bad_query12
+--input=in/test01.in --qf=queries/bad_query13
+--input=in/test01.in --qf=queries/bad_query14

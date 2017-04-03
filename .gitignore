@@ -1,4 +1,7 @@
 *.php
 *.txt
+*.py
+
 CHA/Results/*
 CHA/delta.xml
+XQR/out/*

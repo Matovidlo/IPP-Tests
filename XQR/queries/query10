@@ -1,0 +1,1 @@
+SELECT book FROM ROOT WHERE genre = "Science Fiction" OR genre="Romance"

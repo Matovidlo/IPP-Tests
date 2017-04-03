@@ -1,0 +1,1 @@
+SELECT book FROM ROOT WHERE (publish_date > 1990 OR publish_date = 1990) AND publish_date < 2000

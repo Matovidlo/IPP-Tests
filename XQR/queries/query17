@@ -1,0 +1,1 @@
+SELECT room FROM ROOT WHERE .id = 2

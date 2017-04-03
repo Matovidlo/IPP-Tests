@@ -1,0 +1,23 @@
+Help.............................:
+Help with other param............:
+Non-existing directory:I.........:
+relative directory...............:
+Query and Qf same time...........:
+QF passed but no file............:
+no QF or Query passed............:
+empty QF passed..................:
+empty query......................:
+LIMIT not number.................:
+Missing select...................:
+Missing FROM.....................:
+Valid missing FROM...............:
+Missing FROM 2...................:
+Missing where....................:
+SELECT attribute.................:
+WHERE MISSING OPERAND............:
+WHERE INVALID NUMBER.............:
+WHERE CONTAINS NUMBER............:
+WHERE Brackets...................:
+WHERE String number comparison...:
+WHERE nonexisting element........:
+[EXTRA]ORDER BY non exist........:

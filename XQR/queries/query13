@@ -1,0 +1,1 @@
+SELECT book FROM ROOT WHERE NOT genre = "Science Fiction" AND NOT genre="Romance"
