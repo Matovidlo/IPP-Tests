@@ -86,7 +86,7 @@ do
 		echo -e "${testname2[$i-1]} \e[32mPASS\e[39m"
 		output=$(java -jar ./jexamxml/jexamxml.jar "out/test$i.out" "ref-out/test$i.out" delta.xml ./jexamxml/xqr_options)
 		echo -e "Comparing out/test$i.out with ref-out/test$i.out"
-		if [[ $string == *"not"* ]];
+		if [[ $output == *"not"* ]];
 		then
   			echo -e "\e[31mTwo files are not identical\e[39m"
 		else
